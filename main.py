@@ -8,31 +8,24 @@ times_of_sampling = 100
 
 
 def main():
+    # Loading all of the data for only once.
     fileslist = reader.get_all_data_files(dataset_foler)
-    for subject_num, subject in enumerate(fileslist):
-        subject_data = reader.read_file(subject)
-        parsed_data = reader.form_subject_object(subject_data)
-        # print(parsed_data['breath'][0][0]['binnedPS'])
-        print('For subject' + str(subject_num+1) + ': ')
-        scenario.forgot_passthought(tasks_list, parsed_data, times_of_sampling)
+    subjects_data = {}
+    for subject in fileslist:
+        file_handle = reader.read_file(subject)
+        parsed_data = reader.form_subject_object(file_handle)
+        subject_name = subject[8:11]
+        subjects_data[subject_name] = parsed_data
+    # Check if the data loads correctly.
+    # print(subjects_data.keys())
+    # print(len(subjects_data['001']))
+    # print(subjects_data['001'].keys())
+    # print(subjects_data['001']['breath'][0][0]['binnedPS'])
+    # reader.subject_data_checker(subjects_data)
 
-    # passthought_leakage(task)
-    # brute_force(task)
-
-    # subject's data checker:
-    #     print(len(data))
-    #     print(len(parsed_data))
-    #     for i in parsed_data:
-    #         print(i)
-    #         print(type(parseddata[i]), len(parseddata[i]))
-    #         h = []
-    #         for j in parsed_data[i]:
-    #             h.append(len(j))
-    #             for k in j:
-    #                 if k['sq'] != 0:
-    #                     print(k['sq'])
-    #         print(max(h), min(h))
-
+    scenario.forgot_passthought(subjects_data, tasks_list, times_of_sampling)
+    scenario.passthought_leakage(subjects_data, tasks_list, times_of_sampling)
+    scenario.bruteforce_attack(subjects_data, tasks_list, times_of_sampling)
 
 if __name__ == '__main__':
     main()

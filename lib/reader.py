@@ -28,7 +28,7 @@ def bin_power_spectrum(power_spectrum):
 def binned_PS(reading):
     '''Put everything together'''
     return({'sq': reading['signal_quality'], 'binnedPS': bin_power_spectrum(fft_power_spectrum(clean_readings(reading)))[0]})
-    #Note: The BinnesPS is a layer of list inside, which is somewhat redundant.
+    # Note: The BinnesPS is a layer of list inside, which is somewhat redundant.
 
 
 def form_subject_object(task_data):
@@ -48,6 +48,22 @@ def form_subject_object(task_data):
                 parsed_data[sec['tag']].append([binned_PS(sec['reading'])])
                 trial_start_time = sec['receivedAt']
     return(parsed_data)
+
+
+def subject_data_checker(subjects_data):
+    for subj in subjects_data:
+        print('Subject ' + subj + ' has data for ' + str(len(subjects_data[subj])) + ' tasks.')
+        for i in subjects_data[subj]:
+            print('for task ' + i)
+            print(type(subjects_data[subj][i]), len(subjects_data[subj][i]))
+            h = []
+            print('Instances that signal quality greater than 0 are: ')
+            for j in subjects_data[subj][i]:
+                h.append(len(j))
+                for k in j:
+                    if k['sq'] != 0:
+                        print k['sq'],
+            print('\nMax data entries: ' + str(max(h)) + ', Min data entries: ' + str(min(h)) + '\n')
 
 
 def get_all_data_files(dataset_folder):
