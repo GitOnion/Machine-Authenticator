@@ -32,3 +32,19 @@ def crossValidate(X, y):
     clf = svm.LinearSVC()
     scores = cross_validation.cross_val_score(clf, np.array(X), y, cv=7)
     return scores.mean()
+
+
+def svm_learner(train_data_target, train_data_other):
+    '''Takes in two lists of training data, and returns a linear classifier.'''
+    Target = feature_vector_generator(train_data_target)
+    Other = feature_vector_generator(train_data_other)
+    X, y = labeler([Target, Other])
+    linear_classifier = svm.LinearSVC()
+    linear_classifier.fit(X, y)
+    return linear_classifier
+
+
+def svm_tester(test_data_target, linear_classifier):
+    '''Takes in a list of testing data and a linear classifier, and return the
+    prediction results of the former by the later.'''
+    

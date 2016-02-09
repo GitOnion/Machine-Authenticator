@@ -4,13 +4,13 @@ from sklearn import svm
 import numpy as np
 
 
-def forgot_passthought(subject_data, tasks_list, times):
+def forgot_passthought(subjects_data, tasks_list, times):
     '''Scenario 1: A subject forgets his own passthought and tries to authenticate himself.'''
 
     log_file_name = 'Scenario1_log.txt'
     log = open(log_file_name, 'w')
     print("Scenario 1: Forgot Passthought")
-    for target_subject in sorted(subject_data.keys()):
+    for target_subject in sorted(subjects_data.keys()):
         print('For subject' + str(target_subject) + ': ')
         # log.write('For subject' + str(target_subject) + ':\n')
         logger = '{"' + target_subject + '":{'
@@ -34,15 +34,16 @@ def forgot_passthought(subject_data, tasks_list, times):
                 logger += '"' + str(one_sample_run) + '":{'
                 seed, trainer, tester = selector.random_sampler(1)
                 # log.write('The ' + str(one_sample_run+1) + 'th sample seed: ' + str(seed))
-                logger += '"target":' + str(seed)
-                # print(trainer, [task], len(subject_data[target_subject][task]))
-                train_data_target = selector.sample_mapper(trainer, [task], subject_data[target_subject])
-                test_data_target = selector.sample_mapper(tester, [task], subject_data[target_subject])
+                logger += '"target":"' + str(seed) + ',' + str(trainer) + ',' + str(tester)
+                # print(trainer, [task], len(subjects_data[target_subject][task]))
+                train_data_target = selector.sample_mapper(trainer, [task], subjects_data[target_subject])
+                test_data_target = selector.sample_mapper(tester, [task], subjects_data[target_subject])
+                # print(test_data_target)
 
                 seed, trainer, tester = selector.random_sampler(len(others_list))
-                logger += ',"other":' + str(seed) + '}, '
-                train_data_other = selector.sample_mapper(trainer, others_list, subject_data[target_subject])
-                test_data_other = selector.sample_mapper(tester, others_list, subject_data[target_subject])
+                logger += '","other":"' + str(seed) + ',' + str(trainer) + ',' + str(tester) + '"}, '
+                train_data_other = selector.sample_mapper(trainer, others_list, subjects_data[target_subject])
+                test_data_other = selector.sample_mapper(tester, others_list, subjects_data[target_subject])
 
                 Target = learner.feature_vector_generator(train_data_target)
                 Other = learner.feature_vector_generator(train_data_other)
@@ -69,13 +70,13 @@ def forgot_passthought(subject_data, tasks_list, times):
     return
 
 
-def passthought_leakage(subject_data, tasks_list, times):
+def passthought_leakage(subjects_data, tasks_list, times):
     '''Scenario 2: A subject's passthought was known and attackers try to impersonate him.'''
 
     log_file_name = 'Scenario2_log.txt'
     log = open(log_file_name, 'w')
     print("Scenario 2: Passthought Leakage")
-    for target_subject in sorted(subject_data.keys()):
+    for target_subject in sorted(subjects_data.keys()):
         print('For subject' + str(target_subject) + ': ')
         # log.write('For subject' + str(target_subject) + ':\n')
         logger = '{"' + target_subject + '":{'
@@ -86,7 +87,7 @@ def passthought_leakage(subject_data, tasks_list, times):
             logger += '"' + task + '":{'
 
             others_list = []
-            for other_subjects in sorted(subject_data.keys()):
+            for other_subjects in sorted(subjects_data.keys()):
                 if other_subjects == target_subject:
                     continue
                 else:
@@ -101,14 +102,14 @@ def passthought_leakage(subject_data, tasks_list, times):
                 seed, trainer, tester = selector.random_sampler(1)
                 # log.write('The ' + str(one_sample_run+1) + 'th sample seed: ' + str(seed))
                 logger += '"target":' + str(seed)
-                # print(trainer, [task], len(subject_data[target_subject][task]))
-                train_data_target = selector.sample_mapper(trainer, [task], subject_data[target_subject])
-                test_data_target = selector.sample_mapper(tester, [task], subject_data[target_subject])
+                # print(trainer, [task], len(subjects_data[target_subject][task]))
+                train_data_target = selector.sample_mapper(trainer, [task], subjects_data[target_subject])
+                test_data_target = selector.sample_mapper(tester, [task], subjects_data[target_subject])
 
                 seed, trainer, tester = selector.random_sampler(len(others_list))
                 logger += ',"other":' + str(seed) + '}, '
-                train_data_other = selector.subject_mapper(trainer, others_list, task, subject_data)
-                test_data_other = selector.subject_mapper(tester, others_list, task, subject_data)
+                train_data_other = selector.subject_mapper(trainer, others_list, task, subjects_data)
+                test_data_other = selector.subject_mapper(tester, others_list, task, subjects_data)
 
                 Target = learner.feature_vector_generator(train_data_target)
                 Other = learner.feature_vector_generator(train_data_other)
@@ -135,13 +136,13 @@ def passthought_leakage(subject_data, tasks_list, times):
     return
 
 
-def bruteforce_attack(subject_data, tasks_list, times):
+def bruteforce_attack(subjects_data, tasks_list, times):
     '''Scenario 3: A subject has became a target, but passthought secrecy was kept. Attackers try bruteforce.'''
 
     log_file_name = 'Scenario3_log.txt'
     log = open(log_file_name, 'w')
     print("Scenario 3: Bruteforce Attack")
-    for target_subject in sorted(subject_data.keys()):
+    for target_subject in sorted(subjects_data.keys()):
         print('For subject' + str(target_subject) + ': ')
         # log.write('For subject' + str(target_subject) + ':\n')
         logger = '{"' + target_subject + '":{'
@@ -152,7 +153,7 @@ def bruteforce_attack(subject_data, tasks_list, times):
             logger += '"' + task + '":{'
 
             others_list = []
-            for other_subjects in sorted(subject_data.keys()):
+            for other_subjects in sorted(subjects_data.keys()):
                 if other_subjects == target_subject:
                     continue
                 else:
@@ -167,14 +168,14 @@ def bruteforce_attack(subject_data, tasks_list, times):
                 seed, trainer, tester = selector.random_sampler(1)
                 # log.write('The ' + str(one_sample_run+1) + 'th sample seed: ' + str(seed))
                 logger += '"target":' + str(seed)
-                # print(trainer, [task], len(subject_data[target_subject][task]))
-                train_data_target = selector.sample_mapper(trainer, [task], subject_data[target_subject])
-                test_data_target = selector.sample_mapper(tester, [task], subject_data[target_subject])
+                # print(trainer, [task], len(subjects_data[target_subject][task]))
+                train_data_target = selector.sample_mapper(trainer, [task], subjects_data[target_subject])
+                test_data_target = selector.sample_mapper(tester, [task], subjects_data[target_subject])
 
                 seed, trainer, tester = selector.random_sampler(len(others_list)*7)
                 logger += ',"other":' + str(seed) + '}, '
-                train_data_other = selector.space_mapper(trainer, others_list, tasks_list, subject_data)
-                test_data_other = selector.space_mapper(tester, others_list, tasks_list, subject_data)
+                train_data_other = selector.space_mapper(trainer, others_list, tasks_list, subjects_data)
+                test_data_other = selector.space_mapper(tester, others_list, tasks_list, subjects_data)
 
                 Target = learner.feature_vector_generator(train_data_target)
                 Other = learner.feature_vector_generator(train_data_other)
