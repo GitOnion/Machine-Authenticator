@@ -6,10 +6,10 @@ from lib import brainlib
 
 def feature_vector_generator(binned_PS_list):
     '''Average the binned power spectrum.'''
-    holder = []
-    for binned_PS in binned_PS_list:
-        holder.append(brainlib.avgPowerSpectrum(binned_PS, np.log10))
-    return(holder)
+    # holder = []
+    # for binned_PS in binned_PS_list:
+    #     holder.append(brainlib.avgPowerSpectrum(binned_PS, np.log10))
+    return(brainlib.avgPowerSpectrum(binned_PS_list, np.log10))
 
 
 def labeler(feature_vectors_list):
@@ -24,14 +24,14 @@ def labeler(feature_vectors_list):
             X.append(vector)
             y.append(currentLabel)
         currentLabel += 1
-    return X, y
+    return(X, y)
 
 
 def crossValidate(X, y):
     "7-fold cross-validation with an SVM with a set of labels and vectors"
     clf = svm.LinearSVC()
     scores = cross_validation.cross_val_score(clf, np.array(X), y, cv=7)
-    return scores.mean()
+    return(scores.mean(), scores.std())
 
 
 def svm_learner(train_data_target, train_data_other):
@@ -41,10 +41,4 @@ def svm_learner(train_data_target, train_data_other):
     X, y = labeler([Target, Other])
     linear_classifier = svm.LinearSVC()
     linear_classifier.fit(X, y)
-    return linear_classifier
-
-
-def svm_tester(test_data_target, linear_classifier):
-    '''Takes in a list of testing data and a linear classifier, and return the
-    prediction results of the former by the later.'''
-    
+    return(linear_classifier)

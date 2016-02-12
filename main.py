@@ -1,3 +1,4 @@
+from functools import reduce
 from lib import reader
 # from lib import scenario
 from lib import scenarios
@@ -5,7 +6,7 @@ from lib import scenarios
 dataset_foler = 'dataset'
 # tasks_list = ['breath', 'blink']
 tasks_list = ['breath', 'blink', 'ocular', 'song', 'hear', 'face', 'cube']
-times_of_sampling = 1
+times_of_sampling = 1000
 vector_resolution = 3
 
 
@@ -23,16 +24,17 @@ def main():
         # Use pre-feature_vectorized data:
         # subjects_data[subject_name] = parsed_data
 
-        vectorized_data = reader.feature_vector_transformer(parsed_data, vector_resolution)
-        subjects_data[subject_name] = (vectorized_data, reduce(lambda x, y: x + y, [sum(vectorized_data[task][1]) for task in vectorized_data]))
+        vectorized_data = reader.feature_vector_transformer(parsed_data, tasks_list, vector_resolution)
+        subjects_data[subject_name] = (vectorized_data, reduce(lambda x, y: x + y, [sum(vectorized_data[task][1]) for task in tasks_list]))
+        # print(subjects_data[subject_name][1])
         # Check if the vectorized_data is equivalent to parsed_data:
         # print(subjects_data['001'][0]['breath'][0][0][0])
         # print(learner.feature_vector_generator([parsed_data['breath'][0][0]['binnedPS'], parsed_data['breath'][0][1]['binnedPS'], parsed_data['breath'][0][2]['binnedPS']]))
 
-    scenarios.pair_comparison(subjects_data, tasks_list, times_of_sampling)
-    scenarios.forgot_passthought(subjects_data, tasks_list, times_of_sampling)
-    # scenario.passthought_leakage(subjects_data, tasks_list, times_of_sampling)
-    # scenario.bruteforce_attack(subjects_data, tasks_list, times_of_sampling)
+    # scenarios.pair_comparison(subjects_data, tasks_list)
+    # scenarios.forgot_passthought(subjects_data, tasks_list, times_of_sampling)
+    scenarios.passthought_leakage(subjects_data, tasks_list, times_of_sampling)
+    scenarios.bruteforce_attack(subjects_data, tasks_list, times_of_sampling)
 
 if __name__ == '__main__':
     main()

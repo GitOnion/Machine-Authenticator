@@ -21,7 +21,7 @@ task_split_samples = task_total_samples / 2  # 20
 def random_sampler(number_of_samples):
     '''Return a tuple of two list, each specifying a lists of random integers for training
     or testing. Each random integer falls within the range of the respective calling scenario.'''
-    holder = random.sample(xrange(number_of_samples), number_of_samples)  # 40
+    holder = random.sample(xrange(number_of_samples), number_of_samples)  # 40, 240, 280 * subject numbers
     train_data = holder[:task_split_samples]
     test_data = holder[task_split_samples:task_total_samples]
     return(train_data, test_data)
@@ -30,31 +30,30 @@ def random_sampler(number_of_samples):
 def sample_mapper(sample_list, subject_list, task_list, subject_sample_numbers, task_sample_numbers, subjects_data):
     '''Return actual samples based on the sample_list.'''
     sample_data = []
-    # print(sample_list, subject_list, task_list, subject_sample_numbers, task_sample_numbers)
     for sample in sample_list:
-        # print(sample)
+        # print(subject_sample_numbers)
         for subject_index, subject_total_samples in enumerate(subject_sample_numbers):
+            # print(sample, subject_index, subject_total_samples)
             if sample >= subject_total_samples:
                 sample -= subject_total_samples
             else:
                 select_subject = subject_list[subject_index]
-                # print(sample, select_subject)
                 break
-        for task_index, task_total_samples in enumerate(task_sample_numbers):
+        for task_index, task_total_samples in enumerate(task_sample_numbers[subject_list.index(select_subject)]):
+            # print(sample, task_index, task_total_samples)
             if sample >= task_total_samples:
                 sample -= task_total_samples
             else:
                 select_task = task_list[task_index]
-                # print(sample, select_task)
                 break
         for trial_index, trial_total_samples in enumerate(subjects_data[select_subject][0][select_task][1]):
             if sample >= trial_total_samples:
                 sample -= trial_total_samples
             else:
-                # select_trial = trial_index
+                select_trial = trial_index
                 select_sample = subjects_data[select_subject][0][select_task][0][trial_index][sample]
                 break
-        # print(select_subject, select_task, select_trial, sample)
+        # print(select_subject, select_task, select_trial, sample, len(select_sample))
         sample_data.append(select_sample)
     return(sample_data)
 

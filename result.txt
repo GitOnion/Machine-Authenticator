@@ -1,729 +1,195 @@
-Scenario 1: Forgot Passthought
-For subject001: 
+For subject 001 :
 For task: breath
-
-  FRR = 0.491, FAR = 0.5045
+  FRR = 0.48545, FAR = 0.49155
 For task: blink
-
-  FRR = 0.197, FAR = 0.35
+  FRR = 0.2435, FAR = 0.3055
 For task: ocular
-
-  FRR = 0.247, FAR = 0.2935
+  FRR = 0.3025, FAR = 0.32325
 For task: song
-
-  FRR = 0.518, FAR = 0.546
+  FRR = 0.48825, FAR = 0.50845
 For task: hear
-
-  FRR = 0.512, FAR = 0.4315
+  FRR = 0.4469, FAR = 0.464
 For task: face
-
-  FRR = 0.153, FAR = 0.18
+  FRR = 0.16035, FAR = 0.1677
 For task: cube
-
-  FRR = 0.516, FAR = 0.4315
-For subject002: 
+  FRR = 0.3647, FAR = 0.4071
+For subject 002 :
 For task: breath
-
-  FRR = 0.4815, FAR = 0.510184210526
+  FRR = 0.4668, FAR = 0.47135
 For task: blink
-
-  FRR = 0.4815, FAR = 0.478210526316
+  FRR = 0.46855, FAR = 0.45205
 For task: ocular
-
-  FRR = 0.4145, FAR = 0.416763157895
+  FRR = 0.42825, FAR = 0.44055
 For task: song
-
-  FRR = 0.484, FAR = 0.512578947368
+  FRR = 0.45345, FAR = 0.4585
 For task: hear
-
-  FRR = 0.3235, FAR = 0.488236842105
+  FRR = 0.43875, FAR = 0.47585
 For task: face
-
-  FRR = 0.4685, FAR = 0.532210526316
+  FRR = 0.5236, FAR = 0.50455
 For task: cube
-
-  FRR = 0.481157894737, FAR = 0.514
-For subject003: 
+  FRR = 0.524894736842, FAR = 0.506
+For subject 003 :
 For task: breath
-
-  FRR = 0.406, FAR = 0.373131578947
+  FRR = 0.26095, FAR = 0.291
 For task: blink
-
-  FRR = 0.4445, FAR = 0.507526315789
+  FRR = 0.46785, FAR = 0.44745
 For task: ocular
-
-  FRR = 0.43, FAR = 0.216605263158
+  FRR = 0.36315, FAR = 0.3691
 For task: song
-
-  FRR = 0.625, FAR = 0.324131578947
+  FRR = 0.4598, FAR = 0.46125
 For task: hear
-
-  FRR = 0.395, FAR = 0.270736842105
+  FRR = 0.3641, FAR = 0.4168
 For task: face
-
-  FRR = 0.427157894737, FAR = 0.478
+  FRR = 0.476894736842, FAR = 0.5078
 For task: cube
-
-  FRR = 0.184, FAR = 0.501631578947
-For subject004: 
+  FRR = 0.36905, FAR = 0.4225
+For subject 004 :
 For task: breath
-
-  FRR = 0.188438596491, FAR = 0.356842105263
+  FRR = 0.272555555556, FAR = 0.25345
 For task: blink
-
-  FRR = 0.523026315789, FAR = 0.271977640179
+  FRR = 0.406157894737, FAR = 0.45435
 For task: ocular
-
-  FRR = 0.3395, FAR = 0.218459408325
+  FRR = 0.3048, FAR = 0.397
 For task: song
-
-  FRR = 0.2675, FAR = 0.19431871345
+  FRR = 0.276, FAR = 0.35705
 For task: hear
-
-  FRR = 0.5415, FAR = 0.5056625387
+  FRR = 0.36395, FAR = 0.35825
 For task: face
-
-  FRR = 0.508789473684, FAR = 0.458035087719
+  FRR = 0.37505, FAR = 0.3772
 For task: cube
-
-  FRR = 0.5305, FAR = 0.268450980392
-For subject005: 
+  FRR = 0.33305, FAR = 0.36045
+For subject 005 :
 For task: breath
-
-  FRR = 0.3425, FAR = 0.348
+  FRR = 0.348, FAR = 0.3591
 For task: blink
-
-  FRR = 0.457, FAR = 0.339
+  FRR = 0.4182, FAR = 0.4348
 For task: ocular
-
-  FRR = 0.4325, FAR = 0.5115
+  FRR = 0.4817, FAR = 0.5069
 For task: song
-
-  FRR = 0.4125, FAR = 0.444
+  FRR = 0.47695, FAR = 0.46595
 For task: hear
-
-  FRR = 0.043, FAR = 0.0785
+  FRR = 0.0412, FAR = 0.1207
 For task: face
-
-  FRR = 0.442, FAR = 0.434
+  FRR = 0.47765, FAR = 0.4788
 For task: cube
-
-  FRR = 0.398, FAR = 0.4025
-For subject006: 
+  FRR = 0.45185, FAR = 0.4755
+For subject 006 :
 For task: breath
-
-  FRR = 0.529, FAR = 0.365894736842
+  FRR = 0.46115, FAR = 0.42485
 For task: blink
-
-  FRR = 0.3865, FAR = 0.487657894737
+  FRR = 0.4329, FAR = 0.4591
 For task: ocular
-
-  FRR = 0.3245, FAR = 0.551915204678
+  FRR = 0.44055, FAR = 0.4994
 For task: song
-
-  FRR = 0.513789473684, FAR = 0.482736842105
+  FRR = 0.4434, FAR = 0.46405
 For task: hear
-
-  FRR = 0.3955, FAR = 0.405868421053
+  FRR = 0.3822, FAR = 0.36445
 For task: face
-
-  FRR = 0.42, FAR = 0.525157894737
+  FRR = 0.4584, FAR = 0.48665
 For task: cube
-
-  FRR = 0.307078947368, FAR = 0.465789473684
-For subject007: 
+  FRR = 0.400631578947, FAR = 0.4091
+For subject 007 :
 For task: breath
-
-  FRR = 0.427, FAR = 0.4995
+  FRR = 0.39345, FAR = 0.3728
 For task: blink
-
-  FRR = 0.6545, FAR = 0.427
+  FRR = 0.39875, FAR = 0.4002
 For task: ocular
-
-  FRR = 0.202, FAR = 0.354
+  FRR = 0.2602, FAR = 0.30695
 For task: song
-
-  FRR = 0.316, FAR = 0.5025
+  FRR = 0.43865, FAR = 0.4761
 For task: hear
-
-  FRR = 0.3425, FAR = 0.455
+  FRR = 0.42535, FAR = 0.4641
 For task: face
-
-  FRR = 0.3975, FAR = 0.49
+  FRR = 0.44345, FAR = 0.45685
 For task: cube
-
-  FRR = 0.4385, FAR = 0.5045
-For subject008: 
+  FRR = 0.43465, FAR = 0.42275
+For subject 008 :
 For task: breath
-
-  FRR = 0.5405, FAR = 0.3515
+  FRR = 0.40575, FAR = 0.4467
 For task: blink
-
-  FRR = 0.448, FAR = 0.5425
+  FRR = 0.4997, FAR = 0.50125
 For task: ocular
-
-  FRR = 0.302, FAR = 0.5865
+  FRR = 0.42145, FAR = 0.4605
 For task: song
-
-  FRR = 0.534, FAR = 0.495
+  FRR = 0.45595, FAR = 0.4652
 For task: hear
-
-  FRR = 0.301, FAR = 0.656
+  FRR = 0.44705, FAR = 0.45245
 For task: face
-
-  FRR = 0.5345, FAR = 0.2785
+  FRR = 0.3377, FAR = 0.275
 For task: cube
-
-  FRR = 0.3965, FAR = 0.354
-For subject009: 
+  FRR = 0.3368, FAR = 0.32205
+For subject 009 :
 For task: breath
-
-  FRR = 0.26748245614, FAR = 0.283
+  FRR = 0.303722222222, FAR = 0.3081
 For task: blink
-
-  FRR = 0.3225, FAR = 0.28250877193
+  FRR = 0.3814, FAR = 0.39305
 For task: ocular
-
-  FRR = 0.184, FAR = 0.245266081871
+  FRR = 0.2836, FAR = 0.36205
 For task: song
-
-  FRR = 0.467, FAR = 0.580266081871
+  FRR = 0.46975, FAR = 0.4612
 For task: hear
-
-  FRR = 0.197, FAR = 0.484666666667
+  FRR = 0.4354, FAR = 0.47385
 For task: face
-
-  FRR = 0.4645, FAR = 0.570719298246
+  FRR = 0.31435, FAR = 0.32935
 For task: cube
-
-  FRR = 0.265, FAR = 0.316505847953
-For subject010: 
+  FRR = 0.41395, FAR = 0.4651
+For subject 010 :
 For task: breath
-
-  FRR = 0.5455, FAR = 0.473
+  FRR = 0.47285, FAR = 0.4862
 For task: blink
-
-  FRR = 0.25, FAR = 0.458
+  FRR = 0.32955, FAR = 0.385
 For task: ocular
-
-  FRR = 0.381, FAR = 0.455
+  FRR = 0.38725, FAR = 0.46065
 For task: song
-
-  FRR = 0.468, FAR = 0.511
+  FRR = 0.45575, FAR = 0.4871
 For task: hear
-
-  FRR = 0.4705, FAR = 0.5075
+  FRR = 0.44065, FAR = 0.45855
 For task: face
-
-  FRR = 0.3845, FAR = 0.153
+  FRR = 0.24835, FAR = 0.2356
 For task: cube
-
-  FRR = 0.2395, FAR = 0.179
-For subject011: 
+  FRR = 0.204, FAR = 0.22805
+For subject 011 :
 For task: breath
-
-  FRR = 0.54, FAR = 0.501116959064
+  FRR = 0.4754, FAR = 0.49495
 For task: blink
-
-  FRR = 0.4, FAR = 0.47382748538
+  FRR = 0.321, FAR = 0.35775
 For task: ocular
-
-  FRR = 0.312, FAR = 0.354754385965
+  FRR = 0.25245, FAR = 0.3217
 For task: song
-
-  FRR = 0.5795, FAR = 0.346593567251
+  FRR = 0.38385, FAR = 0.39215
 For task: hear
-
-  FRR = 0.133, FAR = 0.255406432749
+  FRR = 0.1508, FAR = 0.2033
 For task: face
-
-  FRR = 0.488386652907, FAR = 0.3605
+  FRR = 0.410857142857, FAR = 0.3884
 For task: cube
-
-  FRR = 0.3305, FAR = 0.41685380117
-Scenario 2: Passthought Leakage
-For subject001: 
+  FRR = 0.2793, FAR = 0.34855
+For subject 012 :
 For task: breath
-
-  FRR = 0.379, FAR = 0.316578947368
+  FRR = 0.47595, FAR = 0.47135
 For task: blink
-
-  FRR = 0.4015, FAR = 0.381710526316
+  FRR = 0.4839, FAR = 0.4866
 For task: ocular
-
-  FRR = 0.375, FAR = 0.2015
+  FRR = 0.42235, FAR = 0.42005
 For task: song
-
-  FRR = 0.5345, FAR = 0.331263157895
+  FRR = 0.52455, FAR = 0.51155
 For task: hear
-
-  FRR = 0.3325, FAR = 0.27
+  FRR = 0.43995, FAR = 0.48605
 For task: face
-
-  FRR = 0.1695, FAR = 0.201014619883
+  FRR = 0.45275, FAR = 0.47105
 For task: cube
-
-  FRR = 0.2175, FAR = 0.199236842105
-For subject002: 
+  FRR = 0.454842105263, FAR = 0.44285
+For subject 013 :
 For task: breath
-
-  FRR = 0.2405, FAR = 0.414736842105
+  FRR = 0.39505, FAR = 0.3816
 For task: blink
-
-  FRR = 0.3875, FAR = 0.5505
+  FRR = 0.4263, FAR = 0.4338
 For task: ocular
-
-  FRR = 0.208, FAR = 0.4095
+  FRR = 0.38215, FAR = 0.3702
 For task: song
-
-  FRR = 0.2095, FAR = 0.549447368421
+  FRR = 0.456, FAR = 0.5008
 For task: hear
-
-  FRR = 0.129, FAR = 0.3315
+  FRR = 0.4651, FAR = 0.4668
 For task: face
-
-  FRR = 0.065, FAR = 0.170263157895
+  FRR = 0.44975, FAR = 0.47445
 For task: cube
-
-  FRR = 0.140394736842, FAR = 0.2145
-For subject003: 
-For task: breath
-
-  FRR = 0.2875, FAR = 0.274368421053
-For task: blink
-
-  FRR = 0.4365, FAR = 0.138736842105
-For task: ocular
-
-  FRR = 0.4585, FAR = 0.078
-For task: song
-
-  FRR = 0.38, FAR = 0.0730263157895
-For task: hear
-
-  FRR = 0.2675, FAR = 0.064
-For task: face
-
-  FRR = 0.137684210526, FAR = 0.072649122807
-For task: cube
-
-  FRR = 0.14, FAR = 0.112710526316
-For subject004: 
-For task: breath
-
-  FRR = 0.0714093567251, FAR = 0.0140789473684
-For task: blink
-
-  FRR = 0.287052631579, FAR = 0.127
-For task: ocular
-
-  FRR = 0.1735, FAR = 0.277
-For task: song
-
-  FRR = 0.1195, FAR = 0.229052631579
-For task: hear
-
-  FRR = 0.1895, FAR = 0.0335
-For task: face
-
-  FRR = 0.167552631579, FAR = 0.0396052631579
-For task: cube
-
-  FRR = 0.3495, FAR = 0.025
-For subject005: 
-For task: breath
-
-  FRR = 0.355, FAR = 0.413084795322
-For task: blink
-
-  FRR = 0.367, FAR = 0.473894736842
-For task: ocular
-
-  FRR = 0.3605, FAR = 0.5175
-For task: song
-
-  FRR = 0.2065, FAR = 0.385263157895
-For task: hear
-
-  FRR = 0.021, FAR = 0.134
-For task: face
-
-  FRR = 0.065, FAR = 0.175535087719
-For task: cube
-
-  FRR = 0.1735, FAR = 0.202
-For subject006: 
-For task: breath
-
-  FRR = 0.5105, FAR = 0.522289473684
-For task: blink
-
-  FRR = 0.2935, FAR = 0.378078947368
-For task: ocular
-
-  FRR = 0.275, FAR = 0.454
-For task: song
-
-  FRR = 0.426368421053, FAR = 0.521
-For task: hear
-
-  FRR = 0.4705, FAR = 0.303
-For task: face
-
-  FRR = 0.1915, FAR = 0.28735380117
-For task: cube
-
-  FRR = 0.333078947368, FAR = 0.4355
-For subject007: 
-For task: breath
-
-  FRR = 0.304, FAR = 0.0499005847953
-For task: blink
-
-  FRR = 0.21, FAR = 0.0225
-For task: ocular
-
-  FRR = 0.4965, FAR = 0.2845
-For task: song
-
-  FRR = 0.385, FAR = 0.0955789473684
-For task: hear
-
-  FRR = 0.268, FAR = 0.0675
-For task: face
-
-  FRR = 0.378, FAR = 0.0913157894737
-For task: cube
-
-  FRR = 0.09, FAR = 0.024
-For subject008: 
-For task: breath
-
-  FRR = 0.1845, FAR = 0.187026315789
-For task: blink
-
-  FRR = 0.334, FAR = 0.460789473684
-For task: ocular
-
-  FRR = 0.223, FAR = 0.3335
-For task: song
-
-  FRR = 0.2585, FAR = 0.2265
-For task: hear
-
-  FRR = 0.112, FAR = 0.2035
-For task: face
-
-  FRR = 0.5045, FAR = 0.428286549708
-For task: cube
-
-  FRR = 0.359, FAR = 0.486131578947
-For subject009: 
-For task: breath
-
-  FRR = 0.334959064327, FAR = 0.153026315789
-For task: blink
-
-  FRR = 0.235, FAR = 0.385684210526
-For task: ocular
-
-  FRR = 0.258, FAR = 0.442
-For task: song
-
-  FRR = 0.509, FAR = 0.263552631579
-For task: hear
-
-  FRR = 0.2595, FAR = 0.414
-For task: face
-
-  FRR = 0.295, FAR = 0.329304093567
-For task: cube
-
-  FRR = 0.2155, FAR = 0.395052631579
-For subject010: 
-For task: breath
-
-  FRR = 0.268, FAR = 0.393160818713
-For task: blink
-
-  FRR = 0.218, FAR = 0.388394736842
-For task: ocular
-
-  FRR = 0.2765, FAR = 0.426
-For task: song
-
-  FRR = 0.2695, FAR = 0.476
-For task: hear
-
-  FRR = 0.233, FAR = 0.43
-For task: face
-
-  FRR = 0.5325, FAR = 0.387883040936
-For task: cube
-
-  FRR = 0.3105, FAR = 0.453210526316
-For subject011: 
-For task: breath
-
-  FRR = 0.3325, FAR = 0.238631578947
-For task: blink
-
-  FRR = 0.1775, FAR = 0.214710526316
-For task: ocular
-
-  FRR = 0.1995, FAR = 0.2455
-For task: song
-
-  FRR = 0.5135, FAR = 0.154631578947
-For task: hear
-
-  FRR = 0.185, FAR = 0.093
-For task: face
-
-  FRR = 0.584156242321, FAR = 0.304973684211
-For task: cube
-
-  FRR = 0.1465, FAR = 0.152026315789
-Scenario 3: Bruteforce Attack
-For subject001: 
-For task: breath
-
-  FRR = 0.3625, FAR = 0.326078947368
-For task: blink
-
-  FRR = 0.3405, FAR = 0.360947368421
-For task: ocular
-
-  FRR = 0.425, FAR = 0.379815789474
-For task: song
-
-  FRR = 0.458, FAR = 0.377026315789
-For task: hear
-
-  FRR = 0.374, FAR = 0.351880116959
-For task: face
-
-  FRR = 0.1075, FAR = 0.162421052632
-For task: cube
-
-  FRR = 0.2135, FAR = 0.22182748538
-For subject002: 
-For task: breath
-
-  FRR = 0.286, FAR = 0.412947368421
-For task: blink
-
-  FRR = 0.217, FAR = 0.441210526316
-For task: ocular
-
-  FRR = 0.144, FAR = 0.362447368421
-For task: song
-
-  FRR = 0.2625, FAR = 0.461868421053
-For task: hear
-
-  FRR = 0.13, FAR = 0.336657894737
-For task: face
-
-  FRR = 0.184, FAR = 0.380342105263
-For task: cube
-
-  FRR = 0.205473684211, FAR = 0.342289473684
-For subject003: 
-For task: breath
-
-  FRR = 0.2945, FAR = 0.2045
-For task: blink
-
-  FRR = 0.34, FAR = 0.159263157895
-For task: ocular
-
-  FRR = 0.355, FAR = 0.111695906433
-For task: song
-
-  FRR = 0.4015, FAR = 0.0761052631579
-For task: hear
-
-  FRR = 0.365, FAR = 0.108552631579
-For task: face
-
-  FRR = 0.229315789474, FAR = 0.105157894737
-For task: cube
-
-  FRR = 0.1515, FAR = 0.212710526316
-For subject004: 
-For task: breath
-
-  FRR = 0.0714473684211, FAR = 0.02
-For task: blink
-
-  FRR = 0.212947368421, FAR = 0.129973684211
-For task: ocular
-
-  FRR = 0.1145, FAR = 0.199842105263
-For task: song
-
-  FRR = 0.0795, FAR = 0.195842105263
-For task: hear
-
-  FRR = 0.2125, FAR = 0.0400526315789
-For task: face
-
-  FRR = 0.222263157895, FAR = 0.0581842105263
-For task: cube
-
-  FRR = 0.295, FAR = 0.0730263157895
-For subject005: 
-For task: breath
-
-  FRR = 0.376, FAR = 0.449105263158
-For task: blink
-
-  FRR = 0.294, FAR = 0.346526315789
-For task: ocular
-
-  FRR = 0.2375, FAR = 0.431552631579
-For task: song
-
-  FRR = 0.238, FAR = 0.405368421053
-For task: hear
-
-  FRR = 0.0075, FAR = 0.128921052632
-For task: face
-
-  FRR = 0.2185, FAR = 0.384052631579
-For task: cube
-
-  FRR = 0.197, FAR = 0.313421052632
-For subject006: 
-For task: breath
-
-  FRR = 0.5125, FAR = 0.51914619883
-For task: blink
-
-  FRR = 0.482, FAR = 0.519
-For task: ocular
-
-  FRR = 0.3045, FAR = 0.497289473684
-For task: song
-
-  FRR = 0.554526315789, FAR = 0.542368421053
-For task: hear
-
-  FRR = 0.475, FAR = 0.375078947368
-For task: face
-
-  FRR = 0.383, FAR = 0.54
-For task: cube
-
-  FRR = 0.375789473684, FAR = 0.437210526316
-For subject007: 
-For task: breath
-
-  FRR = 0.306, FAR = 0.0431578947368
-For task: blink
-
-  FRR = 0.4075, FAR = 0.0391052631579
-For task: ocular
-
-  FRR = 0.3695, FAR = 0.290710526316
-For task: song
-
-  FRR = 0.382, FAR = 0.0937660818713
-For task: hear
-
-  FRR = 0.2545, FAR = 0.0355789473684
-For task: face
-
-  FRR = 0.2525, FAR = 0.0526842105263
-For task: cube
-
-  FRR = 0.142, FAR = 0.0290789473684
-For subject008: 
-For task: breath
-
-  FRR = 0.2345, FAR = 0.213842105263
-For task: blink
-
-  FRR = 0.273, FAR = 0.348578947368
-For task: ocular
-
-  FRR = 0.1485, FAR = 0.280552631579
-For task: song
-
-  FRR = 0.3005, FAR = 0.296368421053
-For task: hear
-
-  FRR = 0.1315, FAR = 0.296973684211
-For task: face
-
-  FRR = 0.587, FAR = 0.286897660819
-For task: cube
-
-  FRR = 0.469, FAR = 0.359394736842
-For subject009: 
-For task: breath
-
-  FRR = 0.352476608187, FAR = 0.191605263158
-For task: blink
-
-  FRR = 0.402, FAR = 0.317684210526
-For task: ocular
-
-  FRR = 0.216, FAR = 0.396789473684
-For task: song
-
-  FRR = 0.6095, FAR = 0.287631578947
-For task: hear
-
-  FRR = 0.3075, FAR = 0.423973684211
-For task: face
-
-  FRR = 0.2845, FAR = 0.210157894737
-For task: cube
-
-  FRR = 0.3315, FAR = 0.328131578947
-For subject010: 
-For task: breath
-
-  FRR = 0.269, FAR = 0.432184210526
-For task: blink
-
-  FRR = 0.1435, FAR = 0.372631578947
-For task: ocular
-
-  FRR = 0.2095, FAR = 0.382368421053
-For task: song
-
-  FRR = 0.322, FAR = 0.455078947368
-For task: hear
-
-  FRR = 0.293, FAR = 0.421921052632
-For task: face
-
-  FRR = 0.4595, FAR = 0.226447368421
-For task: cube
-
-  FRR = 0.381, FAR = 0.255
-For subject011: 
-For task: breath
-
-  FRR = 0.3275, FAR = 0.247052631579
-For task: blink
-
-  FRR = 0.1475, FAR = 0.207342105263
-For task: ocular
-
-  FRR = 0.1105, FAR = 0.246657894737
-For task: song
-
-  FRR = 0.5325, FAR = 0.153078947368
-For task: hear
-
-  FRR = 0.1325, FAR = 0.112713450292
-For task: face
-
-  FRR = 0.557524393091, FAR = 0.1795
-For task: cube
-
-  FRR = 0.1485, FAR = 0.208447368421
+  FRR = 0.44095, FAR = 0.44035

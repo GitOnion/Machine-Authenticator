@@ -84,14 +84,14 @@ def subject_object_checker(subjects_data):
             print('\nMax data entries: ' + str(max(h)) + ', Min data entries: ' + str(min(h)) + '\n')
 
 
-def feature_vector_transformer(subject_data, vector_resolution):
+def feature_vector_transformer(subject_data, tasks_list, vector_resolution):
     '''Generate feature vectors from all data of a subject, with the given vector resolution.
     For each trial in each task, there are supposed to be certain number of feature vectors.
     Check if there's enough data for each feature vector. if so, generate one. If not, dispose
     the data. Keep track of the numbers of feature vectors in all trials in a seperate list.
     Finally, return the new task data as a tuple of 1. the feature vectors and 2. the list.'''
     new_subject_object = {}
-    for task_key in subject_data.keys():
+    for task_key in tasks_list:
         new_task_object = []
         sample_numbers = []  # keeps track of sample numbers of each trial.
         for trial_data in subject_data[task_key]:
