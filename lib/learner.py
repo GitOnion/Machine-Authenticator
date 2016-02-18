@@ -6,9 +6,6 @@ from lib import brainlib
 
 def feature_vector_generator(binned_PS_list):
     '''Average the binned power spectrum.'''
-    # holder = []
-    # for binned_PS in binned_PS_list:
-    #     holder.append(brainlib.avgPowerSpectrum(binned_PS, np.log10))
     return(brainlib.avgPowerSpectrum(binned_PS_list, np.log10))
 
 

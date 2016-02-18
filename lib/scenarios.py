@@ -75,7 +75,6 @@ def forgot_passthought(subjects_data, tasks_list, times):
                 logger += '","other":"' + str(trainer) + ',' + str(tester) + '"}, '
                 train_data_other = selector.sample_mapper(trainer, [target_subject], others_list, [subject_sample_numbers], [others_sample_numbers], subjects_data)
                 test_data_other = selector.sample_mapper(tester, [target_subject], others_list, [subject_sample_numbers], [others_sample_numbers], subjects_data)
-                # print(len(train_data_other), train_data_other[0])
 
                 X, y = learner.labeler([train_data_target, train_data_other])
 
@@ -122,7 +121,6 @@ def passthought_leakage(subjects_data, tasks_list, times):
                     others_list.append(other_subject)
                     others_subjects_sample_numbers.append(sample_numbers)
                     others_sample_numbers.append([sample_numbers])
-            # print(others_list, others_subjects_sample_numbers)
 
             FRR_holder = []
             FAR_holder = []
@@ -132,13 +130,11 @@ def passthought_leakage(subjects_data, tasks_list, times):
 
                 trainer, tester = selector.random_sampler(task_sample_numbers)
                 logger += '"target":"' + str(trainer) + ',' + str(tester)
-                # print(trainer, tester)
                 train_data_target = selector.sample_mapper(trainer, [target_subject], [task], [subject_sample_numbers], [[task_sample_numbers]], subjects_data)
                 test_data_target = selector.sample_mapper(tester, [target_subject], [task], [subject_sample_numbers], [[task_sample_numbers]], subjects_data)
 
                 trainer, tester = selector.random_sampler(sum(others_subjects_sample_numbers))
                 logger += '","other":"' + str(trainer) + ',' + str(tester) + '"}, '
-                # print(trainer, tester)
                 train_data_other = selector.sample_mapper(trainer, others_list, [task], others_subjects_sample_numbers, others_sample_numbers, subjects_data)
                 test_data_other = selector.sample_mapper(tester, others_list, [task], others_subjects_sample_numbers, others_sample_numbers, subjects_data)
 
@@ -189,7 +185,6 @@ def bruteforce_attack(subjects_data, tasks_list, times):
                     for other_task in tasks_list:
                         sample_numbers.append(sum(subjects_data[other_subject][0][other_task][1]))
                     others_sample_numbers.append(sample_numbers)
-            # print(others_sample_numbers)
 
             FRR_holder = []
             FAR_holder = []
@@ -199,13 +194,11 @@ def bruteforce_attack(subjects_data, tasks_list, times):
 
                 trainer, tester = selector.random_sampler(task_sample_numbers)
                 logger += '"target":"' + str(trainer) + ',' + str(tester)
-                # print(trainer, tester)
                 train_data_target = selector.sample_mapper(trainer, [target_subject], [task], [subject_sample_numbers], [[task_sample_numbers]], subjects_data)
                 test_data_target = selector.sample_mapper(tester, [target_subject], [task], [subject_sample_numbers], [[task_sample_numbers]], subjects_data)
 
                 trainer, tester = selector.random_sampler(sum(others_subjects_sample_numbers))
                 logger += '","other":"' + str(trainer) + ',' + str(tester) + '"}, '
-                # print(trainer, tester)
                 train_data_other = selector.sample_mapper(trainer, others_list, tasks_list, others_subjects_sample_numbers, others_sample_numbers, subjects_data)
                 test_data_other = selector.sample_mapper(tester, others_list, tasks_list, others_subjects_sample_numbers, others_sample_numbers, subjects_data)
 

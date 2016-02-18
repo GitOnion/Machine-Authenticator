@@ -43,7 +43,6 @@ def bin_power_spectrum(power_spectrum):
 def binned_PS(reading):
     '''Put everything together'''
     return({'sq': reading['signal_quality'], 'binnedPS': bin_power_spectrum(fft_power_spectrum(clean_readings(reading)))[0]})
-    # Note: The BinnesPS is a layer of list inside, which is somewhat redundant.
 
 
 def form_subject_object(subject_data_in_Json):
@@ -84,33 +83,34 @@ def subject_object_checker(subjects_data):
             print('\nMax data entries: ' + str(max(h)) + ', Min data entries: ' + str(min(h)) + '\n')
 
 
-def feature_vector_transformer(subject_data, tasks_list, vector_resolution):
+def feature_vector_transformer(subject_data, tasks_list, vector_resolution, cut_off_begin, cut_off_end, warm_up_trial):
     '''Generate feature vectors from all data of a subject, with the given vector resolution.
-    For each trial in each task, there are supposed to be certain number of feature vectors.
-    Check if there's enough data for each feature vector. if so, generate one. If not, dispose
+    For each trial in each task, after cutting off the beginning warm up period and ending cool
+    down period, calculate the number of feature vectors given the number of seconds (vector resolution).
+    Check if there's enough data for each feature vector. If so, generate one. If not, dispose
     the data. Keep track of the numbers of feature vectors in all trials in a seperate list.
     Finally, return the new task data as a tuple of 1. the feature vectors and 2. the list.'''
     new_subject_object = {}
     for task_key in tasks_list:
         new_task_object = []
         sample_numbers = []  # keeps track of sample numbers of each trial.
-        for trial_data in subject_data[task_key]:
-            sample_counts = len(trial_data)/vector_resolution
+        for trial_number, trial_data in enumerate(subject_data[task_key]):
+            if trial_number < warm_up_trial:
+                continue
+            sample_counts = (len(trial_data) - cut_off_begin - cut_off_end)/vector_resolution
             new_trial_object = []
             for vector in range(sample_counts):
                 sample_start = vector*(vector_resolution)
                 try:
-                    trial_data[sample_start+(vector_resolution-1)]['binnedPS']
+                    trial_data[cut_off_begin + sample_start+(vector_resolution-1)]['binnedPS']
                 except IndexError:
                     continue
                 grouper = []
-                # print(select_task, select_trial, select_sample)
                 for i in range(vector_resolution):
-                    grouper.append(trial_data[sample_start+i]['binnedPS'])
+                    grouper.append(trial_data[cut_off_begin + sample_start+i]['binnedPS'])
                 new_trial_object.append(learner.feature_vector_generator(grouper))
             new_task_object.append(new_trial_object)
             sample_numbers.append(len(new_trial_object))
         new_subject_object[task_key] = (new_task_object, sample_numbers)
         # print(task_key, sample_numbers)
-        # print(new_subject_object[task_key][1])
     return(new_subject_object)
