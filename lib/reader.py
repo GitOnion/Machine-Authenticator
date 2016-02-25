@@ -45,6 +45,11 @@ def binned_PS(reading):
     return({'sq': reading['signal_quality'], 'binnedPS': bin_power_spectrum(fft_power_spectrum(clean_readings(reading)))[0]})
 
 
+def feature_vector_generator(binned_PS_list):
+    '''Average the binned power spectrum.'''
+    return(brainlib.avgPowerSpectrum(binned_PS_list, np.log10))
+
+
 def form_subject_object(subject_data_in_Json):
     ''' For one subject, create a dictionary of tasks, in which the keys are the task names,
     and values are lists (to preseve the order) of trials. Trials are seperated using the
@@ -108,7 +113,7 @@ def feature_vector_transformer(subject_data, tasks_list, vector_resolution, cut_
                 grouper = []
                 for i in range(vector_resolution):
                     grouper.append(trial_data[cut_off_begin + sample_start+i]['binnedPS'])
-                new_trial_object.append(learner.feature_vector_generator(grouper))
+                new_trial_object.append(feature_vector_generator(grouper))
             new_task_object.append(new_trial_object)
             sample_numbers.append(len(new_trial_object))
         new_subject_object[task_key] = (new_task_object, sample_numbers)

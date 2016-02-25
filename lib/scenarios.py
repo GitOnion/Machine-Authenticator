@@ -21,10 +21,14 @@ def pair_comparison(subjects_data, tasks_list):
         scores_holder = []
         for tasks_pair in all_possible_pairs:
             task1 = reduce(lambda x, y: x + y, subjects_data[target_subject][0][tasks_pair[0]][0])
+            # print(len(task1))
+            # print(len(task1[0]), len(task1[1]), len(task1[2]), len(task1[3]), len(task1[4]))
             task2 = reduce(lambda x, y: x + y, subjects_data[target_subject][0][tasks_pair[1]][0])
+            # print(len(task2))
             X, y = learner.labeler([task1, task2])
             mean, std = learner.crossValidate(X, y)
             scores_holder.append([mean, std, tasks_pair[0], tasks_pair[1]])
+            # print(tasks_pair[0], tasks_pair[1], mean, std)
             logger += '"' + tasks_pair[0] + ' vs. ' + tasks_pair[1] + '": "' + str(scores_holder[-1][0]) + '", '
         best_pair = max(scores_holder, key=itemgetter(0))
         print(best_pair)

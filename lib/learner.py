@@ -1,12 +1,6 @@
 import numpy as np
 from sklearn import svm
 from sklearn import cross_validation
-from lib import brainlib
-
-
-def feature_vector_generator(binned_PS_list):
-    '''Average the binned power spectrum.'''
-    return(brainlib.avgPowerSpectrum(binned_PS_list, np.log10))
 
 
 def labeler(feature_vectors_list):
@@ -29,13 +23,3 @@ def crossValidate(X, y):
     clf = svm.LinearSVC()
     scores = cross_validation.cross_val_score(clf, np.array(X), y, cv=7)
     return(scores.mean(), scores.std())
-
-
-def svm_learner(train_data_target, train_data_other):
-    '''Takes in two lists of training data, and returns a linear classifier.'''
-    Target = feature_vector_generator(train_data_target)
-    Other = feature_vector_generator(train_data_other)
-    X, y = labeler([Target, Other])
-    linear_classifier = svm.LinearSVC()
-    linear_classifier.fit(X, y)
-    return(linear_classifier)
