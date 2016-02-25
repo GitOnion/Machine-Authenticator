@@ -1,5 +1,5 @@
-# Machine-Authenticator
----
+Machine-Authenticator
+===
 Machine-Authenticator trains a linear classifier with subjects performing different mental tasks. The learner is then tested to see if it can discern different subjects and tasks. The results of testing is reported in terms of False Rejecton Rate (FRR) and False Acceptance Rate (FAR).
 
 - scenarios.py:
@@ -20,12 +20,12 @@ Machine-Authenticator trains a linear classifier with subjects performing differ
 - learner.py
   - Label data according to its role (target, or other), so the labelled data could be used for linear classifier in scenarios. Also has the wrapper of cross_validation.
 
-# Prerequisite
+Prerequisite
 ---
 - scikit-learn
 - Numpy
 
-# Notes
+Notes
 ---
 The logic to build feature vectors are based on @wazaahhh's brainlib, and @elsewhere's feature_vector_generator.
 
